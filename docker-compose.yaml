@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+    environment:
+      - API_HOST=localhost
+      - API_PORT=5000
+    ports:
+      - "5000:5000"
+  frontend:
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    environment:
+    - API_PROTOCOL='http'
+    - API_HOST='localhost'
+    - API_PORT=5000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    stdin_open: true
+    tty: true

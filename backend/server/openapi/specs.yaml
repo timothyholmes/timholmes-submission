@@ -1,0 +1,29 @@
+openapi: "3.0.0"
+
+info:
+  title: Phillies Submission
+  version: "1.0"
+servers:
+  - url: http://localhost:8080/v1
+
+paths:
+  /_health:
+    get:
+      tags:
+      - meta
+      operationId: api.health.get
+      summary: Server is up
+      description: Server is up
+      responses:
+        200:
+          description: Server is up
+  /qualifying-offer:
+    get:
+      tags:
+      - money
+      operationId: api.qualifying_offer.get
+      summary: Get qualifying offer
+      description: Get qualifying offer for data sets from https://questionnaire-148920.appspot.com/swe/data.html
+      responses:
+        200:
+          description: Qualifying offer information

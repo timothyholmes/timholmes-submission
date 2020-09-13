@@ -1,0 +1,55 @@
+:root {
+  --accent: #e01009
+}
+
+.app {
+  margin: 0 15% 0 15%;
+}
+
+.header img { 
+  width:540px; /* you can use % */
+  height: auto;
+}
+
+.header h1 {
+  color: var(--accent);
+  font-size: 8vh;
+}
+
+.header h6 {
+  color: var(--accent);
+  font-size: 2vh;
+}
+
+.header .sub-heading {
+  margin-top: -6vh;
+}
+
+.offer-label {
+  font-size: 500%;
+  background-color: rgba(204, 8, 8, 0.75);
+  color: #ffffff;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.qo-banner {
+  text-align: center;
+  padding-top: 12vh;
+  padding-bottom: 12vh;
+}
+
+.subhead {
+  font-size: 200%;
+}
+
+.chart-wrap {
+  height: 300px;
+  overflow: hidden;
+}
+
+footer {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
