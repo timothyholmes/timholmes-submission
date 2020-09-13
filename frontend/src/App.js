@@ -21,7 +21,7 @@ class App extends React.Component {
 
   async getDataFromApi() {
     const response = await axios.get(`${API_PROTOCOL}://${API_HOST}:${API_PORT}/v1/qualifying-offer`)
-    this.setState((state) => {
+    this.setState(() => {
       return {
         qualifyingOffer: response.data.qualifying_offer,
         salaries: response.data.salaries
@@ -44,16 +44,12 @@ class App extends React.Component {
 
     return (
       <div className="app">
-        <header className="header">
-          {/* <img src="https://seekvectorlogo.net/wp-content/uploads/2018/08/philadelphia-phillies-vector-logo.png"></img> */}
-        </header>
-        
         <div className="qo-banner">
           <div className="offer-label">
             { this.state.qualifyingOffer.label }
           </div>
           <div className="subhead">
-            2016 Qualifying Offer
+            Season's Qualifying Offer
           </div>
         </div>
 

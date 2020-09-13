@@ -6,7 +6,12 @@ from models.player_list import PlayerList
 
 # https://realpython.com/beautiful-soup-web-scraper-python/
 def get_player_list(url):
-    page = requests.get(url)
+    try:
+        page = requests.get(url)
+    except:
+        print('Error! Could not get file at url:', url)
+        return PlayerList([])
+
     soup = BeautifulSoup(page.content, "html.parser")
     table = soup.find(id="salaries-table")
     rows = table.find_all("tr")
@@ -37,4 +42,7 @@ def get_player_list(url):
 def get_qualifying(players):
     salaries = players.get_salaries()
 
-    return mean(salaries[:123])
+    if len(salaries)  > 0:
+        return mean(salaries[:123])
+
+    return 0
